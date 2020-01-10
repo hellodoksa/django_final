@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+    </style>
+    <title>Document</title>
+    <link rel ="stylesheet" href="/static/css/bootstrap.min.css/" />
+    <link rel ="stylesheet" href="/static/css/mystyle.css/" />
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">DOKSA</h5>
+        <div>
+            <table class = "container">
+                <h5>게시판 목록</h5>
+            </table>
+        </div>
+        
+    </div>
+        
+    
+    <div class ="container">
+        <table class = "table"> 
+            <tr>
+                <th class ="bf-light">number</th>  
+                <td>{{one.0}}</td> 
+            </tr>
+            <tr>
+                <th class ="bf-light">제목</th>  
+                <td>{{one.1}}</td>                     
+                    
+            </tr>  
+            <tr>
+                <th class ="bf-light">내용</th>  
+                <td>{{one.2 | linebreaksbr}}</td>                     
+                    
+            </tr>    
+            <tr>
+                <th class ="bf-light">이미지</th>  
+                <td><img src = "data:;base64,{{image}}"
+                    width = "800px" height="450px"></td>                     
+                    
+            </tr>
+            <tr>
+                <th class ="bf-light">작성자</th>  
+                <td>{{one.3}}</td>                     
+                    
+            </tr>        
+            <tr>
+                <th class ="bf-light">조회수</th>  
+                <td>{{one.4}}</td>                     
+                    
+            </tr>                           
+
+           
+            <tr>
+                <th class ="bf-light">작성날짜</th>  
+                <td>{{one.5}}</td>                     
+                    
+            </tr>  
+            
+
+            
+        </table>
+    </div>
+    <div class ="container">
+        <a href=" /board/list" class="btn btn-success"> 목록으로</a> 
+        <a href=" /board/write" class="btn btn-success"> 글쓰기</a>
+        <a href=" /board/edit?no={{one.0}}" class="btn btn-success"> 글수정</a>
+        <a href=" /board/delete?no={{one.0}}" class="btn btn-success"> 글삭제</a>
+        {% if prev > 0 %}
+            <a href=" /board/content?no={{prev}}" class="btn btn-success"> 이전글</a>
+        {% else %}
+            <a href="#" class="btn btn-primary" aria-disabled> 이전글</a>
+        {% endif %} 
+
+
+        {% if next > 0 %}
+            <a href=" /board/content?no={{next}}" class="btn btn-success"> 다음글</a>
+        {% else %}
+            <a href="#" class="btn btn-primary" aria-disabled> 다음글</a>
+        {% endif %} 
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" >
+        <table border="1" >
+            <div class="form-inline" style="margin-bottom: 5px;">
+                <label style="width: 100px;">index 이름 국어 영어 수학 반 </label>
+                
+            </div>
+            
+            {% for one in list %}
+            <div class="form-inline" style="width: 100px;">
+                <tr>
+                    
+                    <td>
+                        
+                        <td>{{one.no}}</td>
+                        <td>{{one.name}}</td>        
+                        <td>{{one.kor}}</td>          
+                        <td>{{one.eng}}</td>            
+                        <td>{{one.math}}</td>   
+                        <td>{{one.classroom}}</td>       
+                        <td>{{one.regdate}}</td>          
+                        <td><a href ="/board/t2_delete?no={{one.no}}">삭제</a></td>
+                        <td><a href ="/board/t2_update?no={{one.no}}">수정</a></td>
+                    </td>
+                </tr>
+            </div>
+            {%endfor%}
+        </table>
+    </div>
+    <a href="/member/exam_index"> 뒤로 </a>
+</body>
+</html>

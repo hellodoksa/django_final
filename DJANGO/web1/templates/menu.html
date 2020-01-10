@@ -1,0 +1,26 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">DOKSA</h5>
+    <nav class="my-2 my-md-0 mr-md-3" style="height: 50px;">
+        
+        {% if not request.session.userid  %}
+            <a class="p-2 text-dark" href="/member/login"> 로그인</a>
+            <a class="p-2 text-dark" href="/member/join"> 회원가입</a>
+
+        {% else %}
+            <a class="p-2 text-dark">{{request.session.username}}님이 로그인 중 </a> 
+                <!--<a class="p-2 text-dark" href="/member/edit"> 회원정보수정</a>
+                <form action ="/member/delete" method ="post">
+                    <input type ="submit" value = "회원탈퇴"/> 
+                </form>
+                <a class="p-2 text-dark" href="/member/delete"> 회원탈퇴</a>-->
+                <a class="btn btn-outline-primary" href="/member/logout">로그아웃</a>
+                
+        {% endif  %}
+            <!--<a class="p-2 text-dark" href="/member/login">로그인</a>
+            <a class="p-2 text-dark" href="#">Enterprise</a>
+            <a class="p-2 text-dark" href="#">Support</a>
+            <a class="p-2 text-dark" href="#">Pricing</a>-->
+        
+    </nav>
+    
+</div>
