@@ -1,0 +1,7 @@
+{
+    "str" : "hello",
+    "number" : 34 ,
+    "array" : [1,2,3,4,5],
+    "object" : {"name" :"a", "age":23},
+    "bool" : true 
+}
